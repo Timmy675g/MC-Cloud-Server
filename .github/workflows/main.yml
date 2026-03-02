@@ -1,0 +1,26 @@
+name: timmylionel CI/CD Pipelines
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Docker Compose Syntax
+        run: docker compose config --quiet
+
+      - name: Check for Tab/Space errors in Purpur Config
+        run: |
+          if grep -q $'\t' data/purpur.yml; then
+            echo "Error: Found tabs in YAML! It seems that Purpur is having a problem!"
+            exit 1
+          fi
+
+      - name: Logic Check Complete
+        run: echo "Infrastructure is valid. Ready for Watchtower."
