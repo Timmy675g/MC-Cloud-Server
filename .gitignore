@@ -6,6 +6,8 @@ data/world_the_end/
 # Ignore logs and backups
 *.log
 *.tar.gz
+data/.rcon-cli.env
+data/.rcon-cli.yaml
 
 # Plugin Data & Metrics
 data/plugins/bStats/
