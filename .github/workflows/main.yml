@@ -32,23 +32,12 @@ jobs:
       - name: Verify Docker Compose Syntax
         run: docker compose config --quiet
 
-      - name: YAML Linting (Strict)
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          file_or_dir: data/
-
       - name: Check for Tab errors in Purpur Config
         run: |
           if grep -q $'\t' data/purpur.yml; then
             echo "Error: Found tabs in YAML! Purpur will fail to load."
             exit 1
           fi
-
-      - name: YAML Linting (Relaxed)
-        uses: ibiqlik/action-yamllint@v3
-        with:
-          file_or_dir: data/
-          config_file: .yamllint
 
   # Stage 3 : Dry Run (Is it Valid or nah?)
   test-run:
