@@ -44,6 +44,12 @@ jobs:
             exit 1
           fi
 
+      - name: YAML Linting (Relaxed)
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: data/
+          config_file: .yamllint
+
   # Stage 3 : Dry Run (Is it Valid or nah?)
   test-run:
     needs: validate-config
