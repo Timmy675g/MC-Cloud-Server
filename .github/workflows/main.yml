@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Verify Docker Compose Syntax
-        run: docker compose config --quiet
+        run: docker compose -f docker-compose.yml config --quiet
 
       - name: Check for Tab errors in Purpur Config
         run: |
@@ -44,13 +44,14 @@ jobs:
     needs: validate-config
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Simulate Startup
-        run: docker compose --dry-run up --no-start
+        run: docker compose -f docker-compose.yml --dry-run up --no-start
   
   # Deploy to Main Branch
   merge-to-main:
     needs: test-run
-    if: github.event_name == 'pull_request' 
+    if: github.event_name == 'pull_request' && success()
     runs-on: ubuntu-latest
     permissions:
       contents: write 
