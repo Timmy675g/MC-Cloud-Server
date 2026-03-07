@@ -15,18 +15,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Sync to GCP (Manual Mode)
+      - name: Sync to the VM 
         run: |
-          # 1. Create a temporary file for the key
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key
           chmod 600 private_key
           
-          # 2. Run the actual rsync command
           rsync -avzr --delete \
+            --rsync-path=/usr/bin/rsync \
             -e "ssh -i private_key -o StrictHostKeyChecking=no" \
             ./ ${{ secrets.GCP_USER }}@${{ secrets.GCP_IP }}:${{ env.SERVER_PATH }}
             
-          # 3. Clean up the key
           rm private_key
 
       - name: Reload Docker
