@@ -1,0 +1,36 @@
+name: Server Automatic Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  SERVER_PATH: "~/minecraft-docker"
+
+jobs:
+  ship-it:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Sync to GCP
+        uses: Burnett01/rsync-deployments@7.0.0
+        with:
+          switches: -avzr --delete
+          path: "./"
+          remote_path: ${{ env.SERVER_PATH }}
+          remote_host: ${{ secrets.GCP_IP }}
+          remote_user: ${{ secrets.GCP_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Reload Docker
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.GCP_IP }}
+          username: ${{ secrets.GCP_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ env.SERVER_PATH }}
+            docker-compose up -d --remove-orphans
