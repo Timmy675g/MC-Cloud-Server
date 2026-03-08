@@ -1,0 +1,25 @@
+name: Plugin Test Pipelines # To check if plugin is compatible or is there any error lines
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Start Ghost Server
+        run: docker-compose -f docker-compose-testing.yml up -d
+
+      - name: Log Inspection
+        run: |
+          echo "Waiting for server to boot..."
+          # This loop checks the logs for the "Done" message
+          timeout 120s grep -q "Done" <(docker logs -f mc-tester)
+          
+          # This checks if there are any Severe or Error lines
+          if docker logs mc-tester | grep -Ei "Error|Exception|Severe"; then
+            echo "Oh No! Plugin caused an error!"
+            exit 1
+          else
+            echo "Server booted clean and nice!"
+          fi
