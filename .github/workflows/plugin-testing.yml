@@ -13,7 +13,10 @@ jobs:
 
       - name: Log Inspection & Error Scan
         run: |
-          sudo chown -R $USER:$USER ./plugins
+          # Forces permissions from inside where the server lives 
+          docker exec -u 0 mc-tester chown -R root:root /data/plugins
+          docker exec -u 0 mc-tester chmod -R 777 /data/plugins
+
           set +e  # Basically Tell the script not to quit if a grep finds nothing it's just set exit
           
           echo "Waiting for server to boot..."
