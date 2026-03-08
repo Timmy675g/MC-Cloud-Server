@@ -10,26 +10,27 @@ jobs:
       - name: Start Testing Server
         run: docker compose -f docker-compose-testing.yml up -d
 
-      - name: Log Inspection
+      - name: Log Inspection & Error Scan
         run: |
-          echo "Initializing docker... and Taking a breath :]"
-          sleep 10
+          set +e  # Basically Tell the script not to quit if a grep finds nothing it's just set exit
           
-          # Check if the container is even running
-          if ! docker ps | grep -q "mc-tester"; then
-            echo "Oh noes! Container failed to start! Here is the logs for debugging:"
-            docker compose -f docker-compose-testing.yml logs
+          echo "Waiting for server to boot..."
+          timeout 180s stdbuf -oL docker logs -f mc-tester | grep -m 1 "Done"
+          
+          if [ $? -ne 0 ]; then
+            echo "Oh noes! Server timed out or crashed."
+            docker logs mc-tester | tail -n 20
             exit 1
           fi
 
-          echo "Waiting for server to boot..."
-          # This follows the logs until the Done appears, with a 3 minute timeout to let the server boot
-          timeout 180s stdbuf -oL docker logs -f mc-tester | grep -m 1 "Done"
-          
-          if [ $? -eq 0 ]; then
-            echo "Yay! Server reached 'Done' state!"
-          else
-            echo "Oh no! Server timed out or crashed before Done."
-            docker logs mc-tester
+          echo "Plase be patient sir! Scanning for critical failures..."
+          # Searching for Errors, but ignore common fake errors if they exist
+          ERRORS=$(docker logs mc-tester | grep -Ei "Error|Exception|Severe" | grep -v "VersionCheck")
+
+          if [ ! -z "$ERRORS" ]; then
+            echo "Oh no! Test Failed: Found critical errors!"
+            echo "$ERRORS"
             exit 1
+          else
+            echo "Yay! Log scan clean! No critical issues found."
           fi
