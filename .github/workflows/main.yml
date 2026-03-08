@@ -24,7 +24,8 @@ jobs:
 
   # Stage 2 : Validation (Verification and Validating)
   validate-config:
-    needs: Security Scan
+    needs: security-scan
+    name: Security Scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,7 +42,8 @@ jobs:
 
   # Stage 3 : Dry Run (Is it Valid or nah?)
   test-run:
-    needs: Validate The Config
+    needs: validate-config
+    name: Dry Run the Docker
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
