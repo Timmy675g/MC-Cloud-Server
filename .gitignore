@@ -5,8 +5,12 @@ data/world_the_end/
 data/server.properties
 
 # Ignore logs and backups
+*.env
 *.log
 *.tar.gz
+data/.env
+data/server.jar
+data/.DS_Store
 data/.rcon-cli.env
 data/.rcon-cli.yaml
 
