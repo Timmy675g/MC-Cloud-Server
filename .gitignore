@@ -22,6 +22,7 @@ data/whitelist.json.tmp
 data/plugins/Essentials/userdata/
 data/plugins/Essentials/usermap.bin
 data/plugins/BetterTeams/
+data/plugins/Essentials/items.json
 plugins/*
 !plugins/*.jar
 
