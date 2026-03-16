@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "uuid": "e9b8bc4a-fa09-3a16-a542-47d2e7abf5de",
+    "name": "Go1dzz",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "0d1d5e17-a70a-37f0-87bc-3424d315cf2d",
+    "name": "0dysseus_KOI",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

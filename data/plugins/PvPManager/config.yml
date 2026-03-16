@@ -210,13 +210,13 @@ Newbie Protection:
 # You can disable the Minecraft builtin cooldown for an item by setting it to 0, like for enderpearls, or -1 for default cooldown
 Item Cooldowns:
   Combat:
-    ENDER_PEARL: 5
-    WIND_CHARGE: 1
-    GOLDEN_APPLE: 30
-    ENCHANTED_GOLDEN_APPLE: 60
+    ENDER_PEARL: -1
+    WIND_CHARGE: -1
+    GOLDEN_APPLE: -1
+    ENCHANTED_GOLDEN_APPLE: -1
   Global:
-    GOLDEN_APPLE: 30
-    ENCHANTED_GOLDEN_APPLE: 60
+    GOLDEN_APPLE: -1
+    ENCHANTED_GOLDEN_APPLE: -1
 
 ########################
 ####  Player Kills  ####
