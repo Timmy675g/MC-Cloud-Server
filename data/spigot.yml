@@ -56,7 +56,7 @@ world-settings:
       item: 0.5
       exp: -1.0
     mob-spawn-range: 8
-    item-despawn-rate: 6000
+    item-despawn-rate: 12000
     arrow-despawn-rate: 1200
     trident-despawn-rate: 1200
     zombie-aggressive-towards-villager: true
