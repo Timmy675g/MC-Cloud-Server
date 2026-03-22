@@ -10,11 +10,15 @@ services:
     ports:
       - "25565:25565"     # Java Edition
       - "19132:19132/udp" # Bedrock Edition
+      - "25575:25575" # RCON Port
     environment:
       EULA: "TRUE"
       TYPE: "CUSTOM"
       CUSTOM_SERVER: "/data/server.jar"
-      MEMORY: "12G"                      # Adjust memory as necessary
+      MEMORY: "12G" # Adjust memory as necessary
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: ${RCON_PASSWORD}
+      RCON_PORT: ${RCON_PORT}
       JVM_XX_OPTS: >-
         -XX:+UseZGC
         -XX:+ZGenerational
@@ -22,8 +26,7 @@ services:
         -XX:ParallelGCThreads=2
         -XX:ConcGCThreads=1
         -XX:MaxGCPauseMillis=20
-        -XX:+UnlockDiagnosticVMOptions
-        -XX:+DoEscapeAnalysis 
+        -XX:+UnlockDiagnosticVMOptions 
     volumes:
       - ./data:/data
     restart: unless-stopped
