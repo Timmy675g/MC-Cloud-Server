@@ -25,6 +25,8 @@ data/plugins/BetterTeams/
 data/plugins/Essentials/items.json
 plugins/*
 !plugins/*.jar
+!data/mods/
+!mods/
 
 # Java/Server Junk 
 data/cache/
