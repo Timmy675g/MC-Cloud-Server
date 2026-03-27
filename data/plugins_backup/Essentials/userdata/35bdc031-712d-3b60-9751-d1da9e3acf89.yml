@@ -1,0 +1,30 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 103.129.23.212
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1774535950952
+  login: 1774529057793
+money: '0'
+last-account-name: Coolmaxanddevan
+logoutlocation:
+  world: 022f3f78-dee8-43e5-b516-e64599c84a18
+  world-name: world
+  x: -10035.279081699526
+  y: -45.0
+  z: 363.30000001192093
+  yaw: -70.8448486328125
+  pitch: 16.410194396972656

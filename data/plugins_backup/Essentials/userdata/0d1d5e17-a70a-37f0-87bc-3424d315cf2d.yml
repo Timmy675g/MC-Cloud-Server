@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 114.4.212.18
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1773646320616
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1774285200603
+  login: 1774285024938
+money: '0'
+last-account-name: 0dysseus_KOI
+lastlocation:
+  world: 022f3f78-dee8-43e5-b516-e64599c84a18
+  world-name: world
+  x: 11685.699999988079
+  y: 55.0
+  z: -10501.300000011921
+  yaw: 153.6005859375
+  pitch: -2.249925374984741
+logoutlocation:
+  world: 022f3f78-dee8-43e5-b516-e64599c84a18
+  world-name: world
+  x: 12133.672386029277
+  y: 55.0
+  z: -10293.699999988079
+  yaw: -172.21463012695312
+  pitch: 13.199984550476074

@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 103.129.23.212
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1774533190100
+  login: 1774532590648
+money: '0'
+last-account-name: KIBAKSI5
+logoutlocation:
+  world: 022f3f78-dee8-43e5-b516-e64599c84a18
+  world-name: world
+  x: -9459.018432991588
+  y: 146.0
+  z: 591.3001662575142
+  yaw: -1.3888415098190308
+  pitch: -4.950002670288086
+lastlocation:
+  world: 022f3f78-dee8-43e5-b516-e64599c84a18
+  world-name: world
+  x: -9998.635859515398
+  y: -44.9375
+  z: 358.427409511967
+  yaw: -178.65000915527344
+  pitch: 29.399999618530273

@@ -35,3 +35,6 @@ data/patcher/
 # Security/Secrets ( If i have these, just for measurements ykyk)
 .env
 authlib-bundle.json
+data/.fabric/
+data/.mixin.out/
+fabric-server-launch.jar

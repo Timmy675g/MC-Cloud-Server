@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 180.254.73.23
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1774360481961
+  login: 1774357092747
+money: '0'
+last-account-name: StuffyFish8122
+logoutlocation:
+  world: 022f3f78-dee8-43e5-b516-e64599c84a18
+  world-name: world
+  x: -2369.0703
+  y: 46.0
+  z: -2502.886
+  yaw: 165.9583740234375
+  pitch: 18.9793701171875
+lastlocation:
+  world: 022f3f78-dee8-43e5-b516-e64599c84a18
+  world-name: world
+  x: -2561.273
+  y: -26.0
+  z: -2695.547
+  yaw: -84.77548217773438
+  pitch: 11.886276245117188

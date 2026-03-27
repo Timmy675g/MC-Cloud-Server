@@ -1,0 +1,30 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 157.85.210.223
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1773643916208
+  login: 1773643869104
+money: '0'
+last-account-name: Darkopeleb
+logoutlocation:
+  world: 7996fd0e-5b56-41e0-bb41-ee316eb8a48b
+  world-name: world
+  x: 2.5
+  y: 61.0
+  z: -2.5
+  yaw: 51.7554931640625
+  pitch: 9.783050537109375

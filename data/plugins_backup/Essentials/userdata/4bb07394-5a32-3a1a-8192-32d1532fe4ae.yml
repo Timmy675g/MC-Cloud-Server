@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 180.254.65.59
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1774353860661
+  login: 1774336127348
+money: '0'
+last-account-name: Zashura_the_enki
+lastlocation:
+  world: 022f3f78-dee8-43e5-b516-e64599c84a18
+  world-name: world
+  x: 721.1957531457396
+  y: 67.0
+  z: -907.6183636424571
+  yaw: -33.52645492553711
+  pitch: 23.84998321533203
+logoutlocation:
+  world: 022f3f78-dee8-43e5-b516-e64599c84a18
+  world-name: world
+  x: 12172.72177900989
+  y: 55.0
+  z: -10287.108197580485
+  yaw: -153.19732666015625
+  pitch: 19.350078582763672

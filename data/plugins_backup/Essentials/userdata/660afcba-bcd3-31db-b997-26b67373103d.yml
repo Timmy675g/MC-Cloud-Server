@@ -1,0 +1,30 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 180.254.73.96
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1774081377161
+  login: 1774080631292
+money: '0'
+last-account-name: Zevrix_
+logoutlocation:
+  world: b2bd265d-acd2-4dab-8dea-e342132a65d6
+  world-name: world_nether
+  x: 277.6457246869697
+  y: 81.875
+  z: 534.6830927285987
+  yaw: -176.36083984375
+  pitch: 33.443931579589844
