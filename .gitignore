@@ -28,6 +28,9 @@ plugins/*
 !data/mods/
 !mods/
 data/whitelist.json
+data/logs
+data/debug
+data/crash-reports
 
 # Java/Server Junk 
 data/cache/
